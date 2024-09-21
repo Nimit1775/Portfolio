@@ -1,17 +1,14 @@
 "use client"
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, Twitter, Instagram } from 'lucide-react'
+import emailjs from '@emailjs/browser'
 
 function Contact() {
   const [gradientColor, setGradientColor] = useState('from-purple-900')
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-
+  const form = useRef();
+  const [status, setStatus] = useState('');
   useEffect(() => {
     const colors = ['from-purple-900', 'from-indigo-900', 'from-blue-900', 'from-violet-900']
     let colorIndex = 0
@@ -24,20 +21,19 @@ function Contact() {
     return () => clearInterval(intervalId)
   }, [])
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    // Here you would typically send the form data to your server
-    // For demonstration, we'll just log it to the console
-    console.log('Form submitted:', formData)
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' })
-    alert('Message sent successfully!')
-  }
-
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .then((result) => {
+          console.log(result.text);
+          setStatus('Message sent successfully!');
+          form.current.reset();
+      }, (error) => {
+          console.log(error.text);
+          setStatus('Failed to send message. Please try again.');
+      });
+  };
   return (
     <div className="min-h-screen relative overflow-hidden">
       {/* Starry night background */}
