@@ -5,16 +5,14 @@ import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-
 const projects = [
   {
     id: 1,
     title: "Wave",
     shortDescription: "A Social Media Platform",
-    fullDescription: "Developed a full-stack social media platform using the MERN stack. Wave allows users to create posts, like and comment on posts, and follow other users. Implemented features like real-time updates, image uploads, and user authentication.and MongoDB for data storage.",
+    fullDescription: "Developed a full-stack social media platform using the MERN stack. Wave allows users to create posts, like and comment on posts, and follow other users. Implemented features like real-time updates, image uploads, and user authentication with MongoDB for data storage.",
     technologies: ["React", "Node.js", "Express", "MongoDB", "Chakra-UI"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "https://wave-social.example.com"
+    link: "https://github.com/Nimit1775/wave"
   },
   {
     id: 2,
@@ -22,17 +20,15 @@ const projects = [
     shortDescription: "AI driven financial advisor",
     fullDescription: "Built a financial advisor web app that uses machine learning to provide personalized investment advice. The app analyzes user data to generate investment recommendations and forecasts. Made using Next.js and implemented Clerk for User Authentication.",
     technologies: ["Next.js", "Aceternity-UI", "Redux", "Clerk"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "https://finansmart.example.com"
+    link: "https://github.com/Nimit1775/Financial_Advisor-"
   },
   {
     id: 3,
     title: "Medium",
     shortDescription: "A Blogging Platform",
-    fullDescription: "Developed a full-stack blogging platform using React and Hono. Medium allows users to create and publish blog posts. Implemented features like user authentication, and real-time updates.",
+    fullDescription: "Developed a full-stack blogging platform using React and Hono. Medium allows users to create and publish blog posts. Implemented features like user authentication and real-time updates.",
     technologies: ["React", "Hono.js", "Cloudflare", "Postgres", "TypeScript"],
-    image: "/placeholder.svg?height=200&width=300",
-    link: "https://medium-clone.example.com"
+    link: "https://medium-clone-flame-five.vercel.app/"
   }
 ]
 
@@ -46,8 +42,7 @@ function ProjectCard({ project }) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <img src={project.image} alt={project.title} className="w-full h-48 object-cover" />
-      <div className="p-6">
+      <div className="p-6 relative z-10">
         <h3 className="text-2xl font-semibold text-white mb-2">{project.title}</h3>
         <p className="text-gray-300 mb-2">{project.shortDescription}</p>
         <p className="text-gray-400 mb-4 text-sm">{project.fullDescription}</p>
@@ -104,7 +99,7 @@ function Projects() {
           />
         ))}
       </div>
-      
+
       {/* Gradient overlay */}
       <div className={`absolute inset-0 bg-gradient-to-b ${gradientColor} to-transparent opacity-70 transition-colors duration-1000`} />
 
