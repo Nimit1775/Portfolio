@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import { Analytics } from '@vercel/analytics/react'; // Import the Analytics component
+
 function App() {
   return (
     <>
@@ -12,6 +14,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Analytics /> 
       </BrowserRouter>
     </>
   );
