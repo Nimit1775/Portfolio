@@ -68,7 +68,7 @@ function Projects() {
     const intervalId = setInterval(() => {
       colorIndex = (colorIndex + 1) % colors.length
       setGradientColor(colors[colorIndex])
-    }, 3000)
+    }, 1000)
 
     return () => clearInterval(intervalId)
   }, [])
