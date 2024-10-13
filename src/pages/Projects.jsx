@@ -8,12 +8,13 @@ import { Link } from 'react-router-dom'
 const projects = [
   {
     id: 1,
-    title: "Wave",
-    shortDescription: "A Social Media Platform",
-    fullDescription: "Developed a full-stack social media platform using the MERN stack. Wave allows users to create posts, like and comment on posts, and follow other users. Implemented features like real-time updates, image uploads, and user authentication with MongoDB for data storage.",
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Chakra-UI"],
-    link: "https://github.com/Nimit1775/wave"
+    title: "Readme-Editor",
+    shortDescription: "A Markdown Editor",
+    fullDescription: "Created a markdown editor that allows users to write and preview markdown in real-time. The editor supports syntax highlighting and downloading markdown files.",
+    technologies: ["React", "Javascript", "TailwindCSS"],
+    link: "https://readme-editor-psi.vercel.app/"
   },
+  
   {
     id: 2,
     title: "FinanSmart",
@@ -29,7 +30,15 @@ const projects = [
     fullDescription: "Developed a full-stack blogging platform using React and Hono. Medium allows users to create and publish blog posts. Implemented features like user authentication and real-time updates.",
     technologies: ["React", "Hono.js", "Cloudflare", "Postgres", "TypeScript"],
     link: "https://medium-clone-flame-five.vercel.app/"
-  }
+  },
+  {
+    id: 4,
+    title: "Wave",
+    shortDescription: "A Social Media Platform",
+    fullDescription: "Developed a full-stack social media platform using the MERN stack. Wave allows users to create posts, like and comment on posts, and follow other users. Implemented features like real-time updates, image uploads, and user authentication with MongoDB for data storage.",
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Chakra-UI"],
+    link: "https://github.com/Nimit1775/wave"
+  },
 ]
 
 function ProjectCard({ project }) {
